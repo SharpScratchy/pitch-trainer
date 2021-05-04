@@ -1,8 +1,9 @@
 .answer-result--ok {
+  color: #188c1f;
   box-sizing: border-box;
   position: relative;
   display: block;
-  transform: scale(var(--ggs, 1));
+  transform: scale(3.5);
   width: 22px;
   height: 22px;
   border: 2px solid;
@@ -26,10 +27,11 @@
 }
 
 .answer-result--ko {
+  color: #e71721;
   box-sizing: border-box;
   position: relative;
   display: block;
-  transform: scale(var(--ggs, 1));
+  transform: scale(3.5);
   width: 22px;
   height: 22px;
   border: 2px solid;

@@ -4,7 +4,7 @@ import Engine from "./Engine";
 import "./AnswerResult.css";
 
 const AnswerResult = () => {
-  const [result, setResult] = useState("");
+  const [result, setResult] = useState("ok");
 
   useEffect(() => {
     Engine.subscribe(setResult);
