@@ -4,8 +4,10 @@ const Engine = () => {
   let ok = 0;
   let ko = 0;
   let note = null;
+
   let callback = null;
   let noteCallback = null;
+  let statsCallback = null;
 
   const makeAGuess = (guessedNote) => {
     if (guessedNote === note) {
@@ -18,11 +20,15 @@ const Engine = () => {
 
     note = randomNote();
     console.log(note);
+
+    statsCallback(ok / (ok + ko));
   };
 
   const subscribe = (cb) => (callback = cb);
 
   const subscribeToNote = (cb) => (noteCallback = cb);
+
+  const subscribeToStats = (cb) => (statsCallback = cb);
 
   const randomNote = () => {
     const index = parseInt(Math.random() * 12);
@@ -38,7 +44,7 @@ const Engine = () => {
 
   note = randomNote();
 
-  return { makeAGuess, subscribe, subscribeToNote };
+  return { makeAGuess, subscribe, subscribeToNote, subscribeToStats };
 };
 
 export default Engine();
