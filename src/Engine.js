@@ -1,10 +1,11 @@
 const notes = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "B"];
 
 const Engine = () => {
-  let note = null;
   let ok = 0;
   let ko = 0;
+  let note = null;
   let callback = null;
+  let noteCallback = null;
 
   const makeAGuess = (guessedNote) => {
     if (guessedNote === note) {
@@ -21,15 +22,23 @@ const Engine = () => {
 
   const subscribe = (cb) => (callback = cb);
 
+  const subscribeToNote = (cb) => (noteCallback = cb);
+
   const randomNote = () => {
     const index = parseInt(Math.random() * 12);
 
-    return notes[index];
+    const newNote = notes[index];
+
+    if (noteCallback !== null) {
+      noteCallback(newNote);
+    }
+
+    return newNote;
   };
 
   note = randomNote();
 
-  return { makeAGuess, subscribe };
+  return { makeAGuess, subscribe, subscribeToNote };
 };
 
 export default Engine();
