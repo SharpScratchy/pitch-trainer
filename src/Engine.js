@@ -32,8 +32,11 @@ const Engine = () => {
 
   const randomNote = () => {
     const index = parseInt(Math.random() * 12);
-
     const newNote = notes[index];
+
+    if (newNote === note) {
+      return randomNote();
+    }
 
     if (noteCallback !== null) {
       noteCallback(newNote);
