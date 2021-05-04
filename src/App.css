@@ -4,9 +4,10 @@
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  padding: 64px;
+  padding: 64px 16px;
 }
 
 .app__title {
   font-size: 48px;
+  text-align: center;
 }
