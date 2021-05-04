@@ -1,4 +1,4 @@
-const notes = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "B"];
+const notes = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
 
 const Engine = () => {
   let ok = 0;
