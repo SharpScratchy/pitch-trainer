@@ -6,3 +6,7 @@
   height: 100%;
   padding: 64px;
 }
+
+.app__title {
+  font-size: 48px;
+}
